@@ -31,15 +31,16 @@ func getArgs() string {
 }
 
 func printData(args int, person []Person) {
-	if args < len(person) {
+	if args <= len(person) {
 		fmt.Printf("Absen-%v \n", args)
 		fmt.Println(strings.Repeat("=", 30))
+		args -= 1
 		fmt.Println("Nama\t\t: ", person[args].nama)
 		fmt.Println("Alamat\t\t: ", person[args].alamat)
 		fmt.Println("Pekerjaan\t: ", person[args].pekerjaan)
 		fmt.Println("Alasan\t\t: ", person[args].alasan)
 	} else {
-		fmt.Println("Mohon masukkan nomor absen yang benar!")
+		fmt.Println("Nomor absen tidak valid!")
 	}
 }
 
