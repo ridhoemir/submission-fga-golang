@@ -14,9 +14,6 @@ var (
 
 func StartServer(port string) {
 	http.HandleFunc("/", routeHandler)
-	http.Handle("/static/",
-		http.StripPrefix("/static/",
-			http.FileServer(http.Dir("views"))))
 	fmt.Printf("Server started at http://localhost%s\n", port)
 	http.ListenAndServe(port, nil)
 }
